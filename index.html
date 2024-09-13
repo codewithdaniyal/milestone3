@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dynamic Resume Builder</h1>
+        </header>
+        <main>
+            <section id="resume-form" class="section">
+                <h2>Enter Your Information</h2>
+                <form id="resume-input-form">
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Education</legend>
+                        <input type="text" id="degree" name="degree" placeholder="Degree" required>
+                        <input type="text" id="university" name="university" placeholder="University" required>
+                        <input type="text" id="graduation-year" name="graduationYear" placeholder="Graduation Year" required>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Skills</legend>
+                        <textarea id="skills" name="skills" placeholder="Enter skills (comma-separated)" required></textarea>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Work Experience</legend>
+                        <input type="text" id="job-title" name="jobTitle" placeholder="Job Title" required>
+                        <input type="text" id="company" name="company" placeholder="Company" required>
+                        <input type="text" id="work-years" name="workYears" placeholder="Years Worked" required>
+                        <textarea id="job-description" name="jobDescription" placeholder="Job Description" required></textarea>
+                    </fieldset>
+                    
+                    <button type="submit">Generate Resume</button>
+                </form>
+            </section>
+            
+            <section id="generated-resume" class="section">
+                <h2>Your Generated Resume</h2>
+                <div id="resume-content"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

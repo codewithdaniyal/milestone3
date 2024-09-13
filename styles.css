@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2C3E50;
+    --text-color: #333333;
+    --button-hover-color: #45a049;
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+    --box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px, rgba(0, 0, 0, 0.1) 0px 6px 6px;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Allow the content to grow */
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    color: var(--text-color);
+    line-height: 1.8;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Container for floating background */
+.background-container {
+    position: fixed; /* Fixed position so it stays in place during scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Floating shapes */
+.floating-shape, .floating-shape2, .floating-shape3 {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out;
+    opacity: 0.4;
+}
+
+.floating-shape {
+    width: 200px;
+    height: 200px;
+    background-color: #4CAF50;
+    top: 20%;
+    left: 10%;
+}
+
+.floating-shape2 {
+    width: 150px;
+    height: 150px;
+    background-color: #2196F3;
+    top: 60%;
+    left: 70%;
+}
+
+.floating-shape3 {
+    width: 100px;
+    height: 100px;
+    background-color: #9C27B0;
+    bottom: 10%;
+    right: 20%;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Scrollable Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.section {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    margin-bottom: 2rem;
+}
+
+.section:hover {
+    transform: translateY(-10px);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.1) 0px 10px 10px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+form {
+    display: grid;
+    grid-gap: 1.5rem;
+}
+
+fieldset {
+    border: none;
+    padding: 1rem;
+    background-color: #F9F9F9;
+    border-radius: var(--border-radius);
+}
+
+legend {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+}
+
+input:focus, textarea:focus {
+    border: 1px solid var(--primary-color);
+    outline: none;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    transform: translateY(-3px);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-shape, .floating-shape2, .floating-shape3 {
+        display: none;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
